@@ -41,14 +41,16 @@ Clone this repository to your local machine:
    composer install
    ```
 
-3. Create database
+3. Edit the .env file with your USERNAME, PASSWORD AND DATABASENAME
    ```sh
-   create the database and name it: pr_security_s7
+   DATABASE_URL="mysql://USERNAME:PASSWORD@127.0.0.1:3306/DATABASENAME?charset=utf8mb4"
    ```
-4. Edit the environment file .env with your mysql USERNAME and PASSWORD
+   
+4. Create database
    ```sh
-   DATABASE_URL="mysql://USERNAME:PASSWORD@127.0.0.1:3306/pr_security_s7?serverVersion=5.7.31&charset=utf8mb4"
+   php bin/console doctrine:database:create
    ```
+
 5. Migrate data to database
    ```sh
    php bin/console doctrine:migrations:migrate
